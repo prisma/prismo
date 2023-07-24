@@ -1,0 +1,1 @@
+export const EMBED_COLOR = "#1AC3D5";
