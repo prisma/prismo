@@ -1,19 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ES2022",
-    "rootDir": "./src/",
-    "outDir": "./dist/",
+    "noEmit": true,
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "esnext"
+    ],
     "strict": true,
     "moduleResolution": "node",
-    "importHelpers": true,
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"],
-    "sourceMap": false
+    "types": [
+      "@cloudflare/workers-types"
+    ]
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test"
+  ]
 }

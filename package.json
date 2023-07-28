@@ -28,6 +28,7 @@
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230724.0",
     "@types/node": "^20.3.3",
     "concurrently": "^8.2.0",
     "rome": "12.1.3",

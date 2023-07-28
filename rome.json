@@ -12,11 +12,13 @@
   "formatter": {
     "enabled": true,
     "indentSize": 2,
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "lineWidth": 100
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "single"
+      "quoteStyle": "single",
+      "trailingComma": "all"
     }
   }
 }
