@@ -1,20 +1,20 @@
 {
-    "general": { 
-        "guildId": "", 
-        "clientId": "" 
+  "general": {
+    "guildId": "",
+    "clientId": ""
+  },
+  "features": {
+    "solved": {
+      "tags": {
+        "unsolved": "ID",
+        "solved": "ID"
+      },
+      "channels": ["ID"]
     },
-    "features": {
-        "solved": { 
-            "tags": { 
-                "unsolved": "ID", 
-                "solved": "ID" 
-            }, 
-            "channels": ["ID"] 
-        },
-        "crosspost": { 
-            "channels": { 
-                "channel-name": "ID" 
-            } 
-        }
+    "crosspost": {
+      "channels": {
+        "channel-name": "ID"
+      }
     }
+  }
 }
