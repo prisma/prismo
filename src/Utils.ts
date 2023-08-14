@@ -1,8 +1,43 @@
-import { ChannelType, ForumChannel, Message } from "discord.js";
+export function createJsonResponse(
+  body: Record<string, unknown>,
+  extra: Record<string, unknown> = {},
+): Response {
+  const headers = {
+    'content-type': 'application/json;charset=UTF-8',
+  };
 
-export function isInForumChannel(message: Message<boolean>) {
-    if(!message.channel.isThread()) return false;
-    if(!message.channel.parent || message.channel.parent.type != ChannelType.GuildForum) return false;
+  const response = new Response(JSON.stringify(body), {
+    headers,
+    ...extra,
+  });
 
-    return true;
+  return response;
+}
+
+export async function sendInteractionResponse(
+  interactionId: string,
+  token: string,
+  response: Record<string, unknown>,
+) {
+  await fetch(`https://discord.com/api/v10/interactions/${interactionId}/${token}/callback`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(response),
+  });
+}
+
+export async function editInteractionResponse(
+  interactionId: string,
+  token: string,
+  response: Record<string, unknown>,
+) {
+  await fetch(`https://discord.com/api/v10/webhooks/${interactionId}/${token}/messages/@original`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(response),
+  });
 }

@@ -1,0 +1,4 @@
+DISCORD_TOKEN="" // The token generated for your bot while creating a discord application
+DISCORD_PUBLIC_KEY="" // Public key of your Discord bot helps to verify the bot and apply interaction url
+DISCORD_APPLICATION_ID=""  // The application id of your bot.
+DISCORD_GUILD_ID=""   // Id of the guild where you want to install the slash commands.
